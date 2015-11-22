@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="197.014605">
+<testcase classname="Validate user registation on the registration page" name="UserProfileUpdate" time="197.014605">
+<system-out><![CDATA[Given user is on CNBC home page.............................................passed
+When user selects login.....................................................passed
+And provides the login details "old"........................................passed
+And user updates profile "cnbc" "user" "1980" "India" "0" "Technology/IT" "Other" "< $50K" "<20" "1".passed
+And saves the "profile".....................................................passed
+Then "profile" changes are saved............................................passed
+And user signs out..........................................................passed
+]]></system-out>
+</testcase>
+</testsuite>
