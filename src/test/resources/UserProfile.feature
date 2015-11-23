@@ -11,7 +11,6 @@ Feature: Validate user registation on the registration page
     Then the user should be logged in
     And user signs out
 
-@WIP
   Scenario Outline: UserProfileUpdate
     Given user is on CNBC home page
     When user selects login
