@@ -15,6 +15,7 @@ import com.sun.jersey.core.util.Base64;
 public class RestClientAPI {
 	private static String BASE_URL = "http://01hw612539vm1:8080";
 	
+	//Code to add comments for Jira Issue
 	public static void RestAddComment(String strComment, String strIssueID) {
 		try {
 		String auth = new String(Base64.encode("admin:admin"));
