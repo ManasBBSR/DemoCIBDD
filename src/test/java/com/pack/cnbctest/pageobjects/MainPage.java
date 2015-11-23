@@ -131,6 +131,7 @@ public class MainPage  extends BasePage {
 		     tLog.info("Entered email id");
 		     
 		     String password;
+		     
 		     if (newPass) {
 		    	 password = "Bdd!5678";
 		     } else {
@@ -178,6 +179,6 @@ public class MainPage  extends BasePage {
 	public void SignOut() {
 		  Actions builder = new Actions(driver);    
 		  builder.moveToElement(myAccountMenu).moveToElement(Signout).click().build().perform();
-		  PageLoadWait(8000);
+		  PageLoadWait(10000);
 	}
 }

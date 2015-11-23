@@ -107,6 +107,7 @@ public class MyProfilePage extends BasePage {
 	
 	public void EnterNewPassword(String strPassword) {
 		type(password,"Bdd!45678");
+		tLog.info(strPassword);
 		type(newPassword1,strPassword);
 		type(newPassword2,strPassword);
 	}
