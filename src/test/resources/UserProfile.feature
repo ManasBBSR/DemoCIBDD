@@ -3,14 +3,14 @@ Feature: Validate user registation on the registration page
   I should be able to register
   So that I can manage my acccount profile
 
-  Scenario: UserRegistration
+  Scenario: SSP-34 UserRegistration
     Given user is on CNBC home page
     When user selects register
     And user provides the details and registers
     Then the user should be logged in
     And user signs out
 
-  Scenario Outline: UserProfileUpdate
+  Scenario Outline: SSP-34 UserProfileUpdate
     Given user is on CNBC home page
     When user selects login
     And provides the login details "old"
@@ -23,7 +23,7 @@ Feature: Validate user registation on the registration page
       | firstname | lastname | birthyear | country | gender | industry      | occupation | household_income | trades_per_week | broker |
       | cnbc      | user     | 1980      | India   | 0      | Technology/IT | Other      | < $50K           | <20             | 1      |
 
-  Scenario: UserPasswordChange
+  Scenario: SSP-34 UserPasswordChange
     Given user is on CNBC home page
     When user selects login
     And provides the login details "old"
@@ -32,7 +32,7 @@ Feature: Validate user registation on the registration page
     Then "password" changes are saved
     And user signs out
 
-  Scenario: UserAccountDelete
+  Scenario: SSP-34 UserAccountDelete
     Given user is on CNBC home page
     When user selects login
     And provides the login details "new"

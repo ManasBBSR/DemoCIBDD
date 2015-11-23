@@ -3,7 +3,8 @@ package com.pack.cnbc.tests;
 import com.pack.base.TestBaseSetup;
 import com.pack.base.logpack.TestLogger;
 import com.pack.cnbctest.pageobjects.*;
-
+import com.pack.base.RestClientAPI;
+import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -15,15 +16,22 @@ public class CNBCUserProfileSteps {
 	TestBaseSetup testsetup;
 	MainPage HomePage, ReturnHome;
 	MyProfilePage MProfPage;
+	Scenario scenario;
 
 	static org.apache.log4j.Logger  tLog;
 			
 	@Before
-	public void setup() {
+	public void setup(Scenario scenario) {
+		this.scenario = scenario;
 		tLog = TestLogger.createLogger();
 		tLog.info("Test Initiated");
 		testsetup = new TestBaseSetup();
 		testsetup.initializeTestBaseSetup("chrome","http://www.cnbc.com");
+	}
+	
+	@After
+	public void UpdateJira () {
+		atScenarioEnd();
 	}
 	
 	@After("@End")
@@ -31,7 +39,14 @@ public class CNBCUserProfileSteps {
 		  testsetup.tearDown();
 		  tLog.info("Test Completed");
 	}
-	  
+
+	public void atScenarioEnd() {
+		String[] splited = scenario.getName().split("\\s+");
+		String strIssueID = splited[0];
+		String strComment = "Execution status for the story Id: " + strIssueID + "and Scenario:" + splited[1] +  ":::" + scenario.getStatus();
+		RestClientAPI.RestAddComment(strComment, strIssueID);
+	}
+	
 	@Given("^user is on CNBC home page$")
 	public void user_is_on_CNBC_home_page() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
@@ -101,7 +116,6 @@ public class CNBCUserProfileSteps {
 	public void updates_the_new_password_as(String arg1) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 		MProfPage.EnterNewPassword(arg1);
-		MProfPage.clickDelAccount();
 	}
 
 	@Then("^user signs out$")

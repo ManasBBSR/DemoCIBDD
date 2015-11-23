@@ -101,7 +101,7 @@ public class MyProfilePage extends BasePage {
 	
 	public void clickSave() {
 		click(btnSaveDetails);
-		PageLoadWait(3000);
+		PageLoadWait(5000);
 		tLog.info("Changes Saved.");
 	}
 	
@@ -113,7 +113,7 @@ public class MyProfilePage extends BasePage {
 	
 	public void clickSavePassword() {
 		click(btnSaveDetails);
-		PageLoadWait(3000);
+		PageLoadWait(5000);
 		tLog.info("Password Updated.");
 	}
 	

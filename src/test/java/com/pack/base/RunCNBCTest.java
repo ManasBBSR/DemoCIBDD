@@ -13,7 +13,6 @@ import org.junit.runner.RunWith;
 			glue = {"com.pack.cnbc.tests"},
 			format = {"pretty",
 					"html:target/cucumber-html-report",
-					"junit:target/cucumber-junit-report/allcukes.xml",
 					"json:target/cucumber-report.json"}
 			//,tags = {"@WIP"}
 			)
