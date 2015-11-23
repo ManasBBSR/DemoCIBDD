@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
 					"html:target/cucumber-html-report",
 					"junit:target/cucumber-junit-report/allcukes.xml",
 					"json:target/cucumber-report.json"}
-			,tags = {"@WIP"}
+			//,tags = {"@WIP"}
 			)
 	
 	//this is an empty class to run with. This needs to remain empty
