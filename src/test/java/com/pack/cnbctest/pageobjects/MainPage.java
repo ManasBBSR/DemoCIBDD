@@ -42,7 +42,7 @@ public class MainPage  extends BasePage {
 		URL = "http://www.cnbc.com";
 		try {
 			open();
-			PageLoadWait(10000); 
+			PageLoadWait(12000); 
 		} catch (Exception e) {
 				tLog.info("Error while opening the page", e);
 		}
@@ -58,7 +58,7 @@ public class MainPage  extends BasePage {
 	   builder.moveToElement(Register).click().build().perform();
 	  //Register.click();
 	  
-	   PageLoadWait(10000);
+	   PageLoadWait(12000);
 	}
 	
 	public void LoginClick() {
@@ -69,7 +69,7 @@ public class MainPage  extends BasePage {
 		   builder.moveToElement(Singin).click().build().perform();
 		  //Register.click();
 		  
-		   PageLoadWait(10000);
+		   PageLoadWait(12000);
 		}
 	
 	public void EnterRegDetails() {

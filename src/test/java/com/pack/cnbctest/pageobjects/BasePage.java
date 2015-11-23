@@ -242,7 +242,7 @@ public class BasePage {
 	        		robot.keyPress(keyInputP);
 	        		robot.keyRelease(keyInputP);
 	        	}
-	          robot.delay(300);
+	          robot.delay(200);
 	        }
 		}
 		
