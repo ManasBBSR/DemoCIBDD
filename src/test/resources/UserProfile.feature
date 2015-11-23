@@ -3,7 +3,6 @@ Feature: Validate user registation on the registration page
   I should be able to register
   So that I can manage my acccount profile
 
-
   Scenario: UserRegistration
     Given user is on CNBC home page
     When user selects register
